@@ -7,17 +7,17 @@ spec:
     matchLabels:
       app: spring-boot-k8s
     replicas: 2
-    template:
-      metadata:
-        labels:
-          app: spring-boot-k8s
-      spec:
-        containers:
-          - name: spring-boot-k8s
-            image: bbamba/docker-image-creation
-            imagePullPolicy: IfNotPresent
-            ports:
-              - containerPort: 8080
+  template:
+    metadata:
+      labels:
+        app: spring-boot-k8s
+    spec:
+      containers:
+        - name: spring-boot-k8s
+          image: bbamba/docker-image-creation
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
 
 
 ---
