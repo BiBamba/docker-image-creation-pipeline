@@ -35,9 +35,9 @@ pipeline {
                         sh 'scp -o StrictHostKeyChecking=no deploymentservice.yaml maxime@192.168.254.174:/home/maxime/jenkins/'
                         script{
                             try{
-                                sh 'ssh maxime@192.168.254.174 kubectl apply -f deploymentservice.yaml'
+                                sh 'ssh maxime@192.168.254.174 kubectl apply -f /home/maxime/jenkins/deploymentservice.yaml'
                             }catch(error){
-                                sh 'ssh maxime@192.168.254.174 kubectl create -f deploymentservice.yaml'
+                                sh 'ssh maxime@192.168.254.174 kubectl create -f /home/maxime/jenkins/deploymentservice.yaml'
                             }
                         }
                         
